@@ -8,8 +8,7 @@ auto locate(string name) -> string {
   string location = {Path::program(), name};
   if(inode::exists(location)) return location;
 
-  directory::create({Path::userData(), "icarus/"});
-  return {Path::userData(), "icarus/", name};
+  return {Path::sharedData(), "icarus/", name};
 }
 
 auto operator+=(string& lhs, const string& rhs) -> string& {

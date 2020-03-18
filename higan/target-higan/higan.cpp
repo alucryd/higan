@@ -43,11 +43,10 @@ auto nall::main(Arguments arguments) -> void {
     Path::data = document["data"].text();
   }
   if(!directory::exists(Path::templates)) {
-    Path::templates = {Path::userData(), "higan/"};
-    directory::create(Path::templates);
+    Path::templates = {Path::sharedData(), "higan/Templates/"};
   }
   if(!directory::exists(Path::data)) {
-    Path::data = {Path::user(), "higan/"};
+    Path::data = {Path::userData(), "higan/Systems/"};
     directory::create(Path::data);
   }
   file::write({Path::settings, "paths.bml"}, string{
