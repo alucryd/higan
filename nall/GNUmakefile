@@ -127,7 +127,8 @@ endif
 
 # linux settings
 ifeq ($(platform),linux)
-  options += -ldl
+  flags += ${CXXFLAGS}
+  options += ${LDFLAGS} -ldl
 endif
 
 # bsd settings
